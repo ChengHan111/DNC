@@ -1,4 +1,4 @@
-[![NVIDIA Source Code License](https://img.shields.io/badge/license-NSCL-blue.svg)](https://github.com/NVlabs/SegFormer/blob/master/LICENSE)
+<!-- [![NVIDIA Source Code License](https://img.shields.io/badge/license-NSCL-blue.svg)](https://github.com/NVlabs/SegFormer/blob/master/LICENSE) -->
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg)
 
 # DNC: Visual Recognition with Deep Nearest Centroids
