@@ -127,8 +127,8 @@ DNC_classification/work_dirs
 DNC_classification/CH_CVPR/data
 DNC_classification/CH_CVPR/*.txt
 DNC_classification/CH_ECCV
-DNC_classification/mmcls
-DNC_classification/configs
+# DNC_classification/mmcls
+# DNC_classification/configs
 DNC_classification/docker
 DNC_classification_pre
 DNC_classification_save
