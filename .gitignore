@@ -131,6 +131,7 @@ DNC_classification/mmcls
 DNC_classification/configs
 DNC_classification/docker
 DNC_classification_pre
+DNC_classification_save
 
 # Pytorch
 *.pth
