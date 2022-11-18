@@ -1,18 +1,18 @@
 # model settings
+# Only for evaluation
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 find_unused_parameters = True
 model = dict(
     type='ImageClassifier',
     backbone=dict(
-        type='ResNet_CIFAR',
-        depth=18,
-        num_stages=4,
-        out_indices=(3, ),
-        style='pytorch'),
+        type='SwinTransformer',
+        arch='base',
+        img_size=384,
+        stage_cfgs=dict(block_cfgs=dict(window_size=12))),
     neck=dict(type='GlobalAveragePooling'),
     head=dict(
-        type='LinearClsHead',
-        num_classes=10,
-        in_channels=512,
+        type='SubCentroids_Head_Formal',
+        num_classes=1000,
+        in_channels=1024,
         loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
-    ))
+        topk=(1, 5)))

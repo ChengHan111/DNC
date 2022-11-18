@@ -1,4 +1,4 @@
-# model settings
+# model settings # change types here
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 find_unused_parameters = True
 model = dict(
@@ -11,8 +11,10 @@ model = dict(
         style='pytorch'),
     neck=dict(type='GlobalAveragePooling'),
     head=dict(
-        type='LinearClsHead',
+        type='SubCentroids_Head_Formal',
         num_classes=10,
-        in_channels=512,
+        in_channels=512,                                                                                                                                                                                                                 
         loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
     ))
+
+    
