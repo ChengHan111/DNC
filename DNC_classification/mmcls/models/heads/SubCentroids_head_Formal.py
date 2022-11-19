@@ -375,7 +375,7 @@ class SubCentroids_Head_Formal(ClsHead):
         # 2048 for imagenet without expanding dimension
         # 1024 for swin transformer without expanding dimension
         embedding_dim = self.in_channels 
-        self.subcentroids = nn.Parameter(torch.zeros(self.num_classes, self.num_subcentroids, embedding_dim),
+        self.prototypes = nn.Parameter(torch.zeros(self.num_classes, self.num_subcentroids, embedding_dim),
                                        requires_grad=self.pretrain_subcentroids)
 
         # CK times embedding_dim
@@ -383,7 +383,7 @@ class SubCentroids_Head_Formal(ClsHead):
         self.mask_norm = nn.LayerNorm(self.num_classes)
 
         self.apply(init_weights)
-        trunc_normal_(self.subcentroids, std=0.02)
+        trunc_normal_(self.prototypes, std=0.02)
 
     def pre_logits(self, x):
         if isinstance(x, tuple):
@@ -444,14 +444,14 @@ class SubCentroids_Head_Formal(ClsHead):
         mask = (gt_seg == pred_seg.view(-1))
 
         # compute cosine similarity
-        cosine_similarity = torch.mm(_c, self.subcentroids.view(-1, self.subcentroids.shape[-1]).t()) #.cpu() # .cpu() ##
+        cosine_similarity = torch.mm(_c, self.prototypes.view(-1, self.prototypes.shape[-1]).t()) #.cpu() # .cpu() ##
 
         # compute logits and apply temperature
         centroid_logits = cosine_similarity / self.temperature
         centroid_target = gt_seg.clone().float()
 
         # clustering for each class
-        centroids = self.subcentroids.data.clone()
+        centroids = self.prototypes.data.clone()
         for k in range(self.num_classes):
             # get initial assignments for the k-th class
             init_q = masks[..., k]
@@ -499,14 +499,14 @@ class SubCentroids_Head_Formal(ClsHead):
 
             centroid_target[gt_seg == k] = indexs.float() + (self.num_subcentroids * k)
 
-        self.subcentroids = nn.Parameter(F.normalize(centroids, p=2, dim=-1),
+        self.prototypes = nn.Parameter(F.normalize(centroids, p=2, dim=-1),
                                        requires_grad=self.pretrain_subcentroids)
 
         # sync across gpus
         if self.use_subcentroids is True and dist.is_available() and dist.is_initialized():
-            centroids = self.subcentroids.data.clone()
+            centroids = self.prototypes.data.clone()
             dist.all_reduce(centroids.div_(dist.get_world_size()))
-            self.subcentroids = nn.Parameter(centroids, requires_grad=self.pretrain_subcentroids)
+            self.prototypes = nn.Parameter(centroids, requires_grad=self.pretrain_subcentroids)
 
         return centroid_logits, centroid_target
 
@@ -567,10 +567,10 @@ class SubCentroids_Head_Formal(ClsHead):
 
         # should add x here.
 
-        self.subcentroids.data.copy_(self.l2_normalize(self.subcentroids))
+        self.prototypes.data.copy_(self.l2_normalize(self.prototypes))
 
         # n: h*w, k: num_class, m: num_subcentroids # n should turn into (# batch* batch_size)
-        masks = torch.einsum('nd,kmd->nmk', x, self.subcentroids) # originally nmk
+        masks = torch.einsum('nd,kmd->nmk', x, self.prototypes) # originally nmk
         
         out_cls = torch.amax(masks, dim=1)   
 
