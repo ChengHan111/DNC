@@ -158,15 +158,12 @@ def sinkhorn_knopp(a, b, M, reg=0.05, numItermax=10):
         # print('v', torch.exp(v))
         # print('K', K)
         B = torch.einsum('i,ij,j->ij', torch.exp(u), K, torch.exp(v))
-        # print(B)
-        # print('K', K)
-        # 如果出现Nah 就回滚
+
         if (torch.any(torch.isnan(u)) or torch.any(torch.isinf(u))
                 or torch.any(torch.isnan(v)) or torch.any(torch.isinf(v))
                 or torch.any(torch.isnan(B)) or torch.any(torch.isinf(B))):
             # we have reached the machine precision #np.any(KtransposeU == 0)
             # come back to previous solution and quit loop
-            # print('Warning: numerical errors at iteration', cpt) break 就break了 没有关系
             u = uprev
             v = vprev
             B = torch.einsum('i,ij,j->ij', torch.exp(u), K, torch.exp(v))
