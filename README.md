@@ -41,6 +41,19 @@ pip install opencv-python==4.5.1.48
 cd DNC_classification && pip install -e . --user
 ```
 
+## Citation
+
+If you find our work helpful in your research, please cite it as:
+
+```
+@article{wang2022visual,
+  title={Visual recognition with deep nearest centroids},
+  author={Wang, Wenguan and Han, Cheng and Zhou, Tianfei and Liu, Dongfang},
+  journal={arXiv preprint arXiv:2209.07383},
+  year={2022}
+}
+```
+
 <!-- cd .. -->
 <!-- cd DNC_segmentation && pip install -e . --user -->
 
