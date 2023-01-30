@@ -17,7 +17,7 @@ DNC: Visual Recognition with Deep Nearest Centroids<br>
 <!-- [Enze Xie](https://xieenze.github.io/), [Wenhai Wang](https://whai362.github.io/), [Zhiding Yu](https://chrisding.github.io/), [Anima Anandkumar](http://tensorlab.cms.caltech.edu/users/anima/), [Jose M. Alvarez](https://rsu.data61.csiro.au/people/jalvarez/), and [Ping Luo](http://luoping.me/).<br>
 NeurIPS 2021. -->
 
-This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC.
+This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC (ICLR2023 SPOTLIGHT).
 <!-- [DNC](https://arxiv.org/abs/2105.15203). -->
 
 We use [MMClassification v0.18.0](https://github.com/open-mmlab/mmclassification/tree/v0.18.0) and [MMSegmentation v0.20.2](https://github.com/open-mmlab/mmsegmentation/tree/v0.20.2) as the codebase.
