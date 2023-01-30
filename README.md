@@ -1,7 +1,7 @@
 <!-- [![NVIDIA Source Code License](https://img.shields.io/badge/license-NSCL-blue.svg)](https://github.com/NVlabs/SegFormer/blob/master/LICENSE) -->
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg)
 
-# DNC: Visual Recognition with Deep Nearest Centroids (Under construction)
+# DNC: Visual Recognition with Deep Nearest Centroids (Spotlight)
 
 <!-- ![image](resources/image.png) -->
 <div align="center">
@@ -40,6 +40,15 @@ pip install mmcv-full==1.4.1
 pip install opencv-python==4.5.1.48
 cd DNC_classification && pip install -e . --user
 ```
+
+## Evaluation
+
+```
+# Single-gpu testing
+pip list | grep "mmcv\|mmcls\|^torch"
+python tools/test.py local_config_file.py model.pth --out result.pkl --metrics accuracy
+```
+
 
 ## Citation
 
