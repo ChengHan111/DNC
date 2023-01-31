@@ -13,11 +13,12 @@
 
 <!-- ### [Project page](https://github.com/NVlabs/SegFormer) | [Paper](https://arxiv.org/abs/2105.15203) | [Demo (Youtube)](https://www.youtube.com/watch?v=J0MoRQzZe8U) | [Demo (Bilibili)](https://www.bilibili.com/video/BV1MV41147Ko/) -->
 
-DNC: Visual Recognition with Deep Nearest Centroids<br>
-<!-- [Enze Xie](https://xieenze.github.io/), [Wenhai Wang](https://whai362.github.io/), [Zhiding Yu](https://chrisding.github.io/), [Anima Anandkumar](http://tensorlab.cms.caltech.edu/users/anima/), [Jose M. Alvarez](https://rsu.data61.csiro.au/people/jalvarez/), and [Ping Luo](http://luoping.me/).<br>
-NeurIPS 2021. -->
+Visual Recognition with Deep Nearest Centroids<br>
+[**Visual Recognition with Deep Nearest Centroids**](https://arxiv.org/abs/2209.07383),            
+[Wenguan Wang](https://sites.google.com/view/wenguanwang/), [Cheng Han](https://scholar.google.com/citations?user=VgkEKZwAAAAJ&hl=en), [Tianfei Zhou](https://www.tfzhou.com/), [Dongfang Liu](https://dongfang-liu.github.io/) <br>
+*ICLR 2023 (Spotlight) ([arXiv 2209.07383](https://arxiv.org/abs/2209.07383))*
 
-This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC (ICLR2023 SPOTLIGHT).
+This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC (ICLR2023- Spotlight).
 <!-- [DNC](https://arxiv.org/abs/2105.15203). -->
 
 We use [MMClassification v0.18.0](https://github.com/open-mmlab/mmclassification/tree/v0.18.0) and [MMSegmentation v0.20.2](https://github.com/open-mmlab/mmsegmentation/tree/v0.20.2) as the codebase.
