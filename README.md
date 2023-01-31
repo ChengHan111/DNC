@@ -13,7 +13,6 @@
 
 <!-- ### [Project page](https://github.com/NVlabs/SegFormer) | [Paper](https://arxiv.org/abs/2105.15203) | [Demo (Youtube)](https://www.youtube.com/watch?v=J0MoRQzZe8U) | [Demo (Bilibili)](https://www.bilibili.com/video/BV1MV41147Ko/) -->
 
-Visual Recognition with Deep Nearest Centroids<br>
 [**Visual Recognition with Deep Nearest Centroids**](https://arxiv.org/abs/2209.07383),            
 [Wenguan Wang](https://sites.google.com/view/wenguanwang/), [Cheng Han](https://scholar.google.com/citations?user=VgkEKZwAAAAJ&hl=en), [Tianfei Zhou](https://www.tfzhou.com/), [Dongfang Liu](https://dongfang-liu.github.io/) <br>
 *ICLR 2023 (Spotlight) ([arXiv 2209.07383](https://arxiv.org/abs/2209.07383))*
@@ -42,7 +41,7 @@ pip install opencv-python==4.5.1.48
 cd DNC_classification && pip install -e . --user
 ```
 
-## Evaluation
+## Testing
 
 ```
 # Single-gpu testing
