@@ -17,7 +17,7 @@
 [Wenguan Wang](https://sites.google.com/view/wenguanwang/), [Cheng Han](https://scholar.google.com/citations?user=VgkEKZwAAAAJ&hl=en), [Tianfei Zhou](https://www.tfzhou.com/), [Dongfang Liu](https://dongfang-liu.github.io/) <br>
 *ICLR 2023 (Spotlight) ([arXiv 2209.07383](https://arxiv.org/abs/2209.07383))*
 
-This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC (ICLR2023- Spotlight).
+This repository is the official Pytorch implementation of training & evaluation code and corresponding pretrained models for DNC.
 <!-- [DNC](https://arxiv.org/abs/2105.15203). -->
 
 We use [MMClassification v0.18.0](https://github.com/open-mmlab/mmclassification/tree/v0.18.0) and [MMSegmentation v0.20.2](https://github.com/open-mmlab/mmsegmentation/tree/v0.20.2) as the codebase.
