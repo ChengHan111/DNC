@@ -41,7 +41,25 @@ pip install opencv-python==4.5.1.48
 cd DNC_classification && pip install -e . --user
 ```
 
+## Training
+
+To train your own model, please apply the following command. Give ResNet50-ImageNet as an example.
+
+```
+sh ./tools/dist_train.sh configs/resnet/resnet50_8xb32_in1k_centroids.py 8 \
+  --work-dir SCRATCH_DIR 
+```
+
+More general case:
+
+```
+sh ./tools/dist_train.sh configs/(resnet/swin_transformer)/xxxxxx.py 8 \
+  --work-dir SCRATCH_DIR
+```
+
 ## Testing
+
+<!-- Download [trained weights](https://drive.google.com/drive/folders/1zCT10t09mXw-8iLqDvkmxR46lOD5dsv4?usp=sharing) -->
 
 ```
 # Single-gpu testing
