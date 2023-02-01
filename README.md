@@ -59,7 +59,7 @@ sh ./tools/dist_train.sh configs/(resnet/swin_transformer)/xxxxxx.py 8 \
 
 ## Testing
 
-<!-- Download [trained weights](https://drive.google.com/drive/folders/1zCT10t09mXw-8iLqDvkmxR46lOD5dsv4?usp=sharing) -->
+Download [trained weights](https://drive.google.com/drive/folders/1zCT10t09mXw-8iLqDvkmxR46lOD5dsv4?usp=sharing)
 
 ```
 # Single-gpu testing
