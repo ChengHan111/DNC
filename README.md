@@ -55,11 +55,11 @@ python tools/test.py local_config_file.py model.pth --out result.pkl --metrics a
 If you find our work helpful in your research, please cite it as:
 
 ```
-@inproceedings{wang2022visual,
+@inproceedings{wang2023visual,
   title={Visual recognition with deep nearest centroids},
   author={Wang, Wenguan and Han, Cheng and Zhou, Tianfei and Liu, Dongfang},
   booktitle={International Conference on Learning Representations (ICLR)},
-  year={2022}
+  year={2023}
 }
 ```
 
